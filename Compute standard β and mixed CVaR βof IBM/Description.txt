@@ -1,0 +1,32 @@
+Homework Solution: Financial Analysis of IBM using Standard and Mixed CVaR Beta
+
+Overview
+- This repository contains a Python-based financial analysis of International Business Machines Corporation (IBM) relative to the S&P 500 index, spanning from January 1, 2017, to January 1, 2023. The primary goal was to compute the daily returns, the standard beta (β), and the mixed Conditional Value at Risk (CVaR) beta of IBM.
+
+Process
+- The analysis consists of several key steps:
+1. Data Retrieval: Historical stock data for IBM and the S&P 500 were fetched using the yfinance library.
+2. Data Processing: Daily returns were calculated for both IBM and the S&P 500.
+3. Beta Calculation:
+	-Standard beta was computed using the formula: β = Cov(r, r_m) / Var(r_m), where r is the return of IBM and r_m is the return of the S&P 500.
+	-Mixed CVaR beta was calculated by applying the given formula that integrates value-at-risk (VaR) and CVaR for different confidence levels.
+4. Statistical Analysis:
+	-Determined Value at Risk (VaR) for the S&P 500 returns at confidence levels of 90% (α1) and 50% (α2).
+	-Calculated the CVaR for the S&P 500 returns based on the VaR results.
+	-Isolated the return sets of IBM based on the S&P 500's VaR cutoff points and computed their expected returns.
+	-Computed mixed CVaR beta taking into account different weights (λ1 and λ2) for the expected returns and CVaR differences.
+
+Results
+- The computed standard beta value for IBM is approximately 0.84, suggesting that IBM's stock price movements are less volatile compared to the market. The mixed CVaR beta value was calculated to be approximately 0.51, reflecting a more conservative risk assessment when considering specific confidence levels for potential losses.
+
+Challenges
+- One challenge faced was managing data types and structures to ensure compatibility with statistical functions. Additionally, the computation of mixed CVaR beta was particularly complex due to its dependence on multiple statistical metrics and parameters.
+
+Tools and Libraries Used
+- Python
+- numpy for numerical calculations
+- yfinance for data acquisition
+
+Conclusion
+- This analysis provides a detailed examination of IBM's stock performance and risk, using both standard and mixed CVaR beta calculations. These metrics offer insights into IBM's volatility and risk in comparison to the broader market, serving as valuable indicators for investment strategy and decision-making.
+
